@@ -75,10 +75,16 @@ duplicating a GPO
 ```
 Copy-GPO -SourceGpoName "Logon Banner" -TargetGpoName "Security Analysts Control"
 ````
+linking a gpo to a target
+
+```
+New-GPLink -Name "Security Analysts Control" -Target "OU=Security Analysts,OU=IT,OU=HQ-NYC,OU=Employees,OU=Corp,DC=INLANEFREIGHT,DC=LOCAL"
+```
+
 
 The rest is done within the  Group Policy Management (GPMC) interface, edit the rule and have fun, change password criteria to further harden the AD and its users
 
-```
+```# Link the 'Security Analysts Control' GPO to the 'Security Analysts' OU
 Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Password Policy
 ```
 
